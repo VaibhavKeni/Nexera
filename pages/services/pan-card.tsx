@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -44,10 +43,6 @@ const panRequirements = [
 ];
 
 export default function PANCardPage() {
-  useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-
   return (
     <>
       <Head>
@@ -107,7 +102,7 @@ export default function PANCardPage() {
               <div className="col-lg-6">
                 <div className="position-relative">
                   <Image
-                    src="/banner.jpg"
+                    src="/Logo with name.png"
                     alt="PAN Card Services"
                     width={600}
                     height={400}
@@ -243,7 +238,7 @@ export default function PANCardPage() {
             </p>
             <div className="d-flex flex-wrap gap-3 justify-content-center">
               <Link href="/contact" className="btn btn-accent btn-lg px-5">
-                Apply Now <i className="bi bi-arrow-right ms-2" />
+                Apply Now <i className="bi bi-arrow-right ms-2"></i>
               </Link>
               <Link href="/services" className="btn btn-outline-light btn-lg px-5">
                 View All Services

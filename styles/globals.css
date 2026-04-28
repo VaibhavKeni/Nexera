@@ -30,6 +30,20 @@ body {
   display: flex;
   align-items: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .hero-section .badge-pill {
@@ -54,17 +68,18 @@ body {
 }
 
 .btn-accent {
-  background: var(--accent);
+  background: var(--primary);
   color: #fff;
   border: none;
   font-weight: 600;
   padding: 12px 28px;
   border-radius: 8px;
-  transition: opacity 0.2s;
+  transition: background 0.2s, opacity 0.2s;
 }
 
 .btn-accent:hover {
-  opacity: 0.9;
+  background: var(--secondary);
+  opacity: 1;
   color: #fff;
 }
 
@@ -111,13 +126,34 @@ body {
   padding: 28px 24px;
   height: 100%;
   border: 1px solid #e8ecf0;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(30, 129, 205, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(30, 129, 205, 0.15);
+  border-color: var(--primary);
 }
 
 .service-icon {
@@ -129,6 +165,12 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   margin-bottom: 16px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
 }
 
 .service-card h5 {
@@ -276,7 +318,7 @@ body {
 
 /* Logo showcase section */
 .logo-showcase {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
   padding: 60px 0;
   text-align: center;
   color: white;
@@ -294,7 +336,7 @@ body {
 
 /* Accent highlights */
 .accent-text {
-  color: var(--accent) !important;
+  color: var(--primary) !important;
 }
 
 .accent-bg {
@@ -346,6 +388,12 @@ body {
   color: #fff;
 }
 
+/* Transparent navbar (home hero) */
+.navbar-transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 /* Active nav link underline */
 .nav-link-active {
   position: relative;
@@ -358,6 +406,13 @@ body {
   left: 12px;
   right: 12px;
   height: 2px;
-  background: var(--accent);
+  background: var(--primary);
   border-radius: 2px;
+}
+
+/* Full-height link wrapper for service cards */
+a.text-decoration-none {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

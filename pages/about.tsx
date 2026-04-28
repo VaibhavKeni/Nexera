@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -22,10 +21,6 @@ const values = [
 ];
 
 export default function AboutPage() {
-  useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-
   return (
     <>
       <Head>
@@ -41,7 +36,7 @@ export default function AboutPage() {
           breadcrumb="About"
         />
 
-        <LogoShowcase 
+        <LogoShowcase
           title="NexEra Consultants"
           subtitle="Trusted Financial & IT Consultancy Since 2019"
         />
@@ -73,7 +68,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="col-lg-7">
-                <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--accent)', letterSpacing: 2 }}>Our Story</p>
+                <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>Our Story</p>
                 <h2>Simplifying Compliance &amp; Empowering Businesses</h2>
                 <p className="text-muted mt-3 mb-2">
                   Founded with a vision to make financial and compliance services accessible to every business, NexEra Consultants has grown into a trusted name across the region.
@@ -84,7 +79,9 @@ export default function AboutPage() {
                 <div>
                   {features.map((f) => (
                     <div className="feature-item" key={f.title}>
-                      <div className="feature-icon"><i className={`bi ${f.icon}`} /></div>
+                      <div className="feature-icon">
+                        <i className={`bi ${f.icon}`}></i>
+                      </div>
                       <div>
                         <div className="fw-bold" style={{ color: 'var(--primary)' }}>{f.title}</div>
                         <div className="text-muted" style={{ fontSize: '0.9rem' }}>{f.desc}</div>
@@ -101,7 +98,7 @@ export default function AboutPage() {
         <section style={{ background: '#f8f9fa', padding: '80px 0' }}>
           <div className="container">
             <div className="text-center mb-5">
-              <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--accent)', letterSpacing: 2 }}>What Drives Us</p>
+              <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>What Drives Us</p>
               <h2 className="section-title">Our Core Values</h2>
             </div>
             <div className="row g-4">
@@ -109,7 +106,7 @@ export default function AboutPage() {
                 <div className="col-sm-6 col-lg-3" key={v.title}>
                   <div className="service-card text-center">
                     <div className="service-icon mx-auto mb-3" style={{ background: 'rgba(30,129,205,0.08)' }}>
-                      <i className={`bi ${v.icon}`} style={{ color: 'var(--primary)', fontSize: '1.5rem' }} />
+                      <i className={`bi ${v.icon}`} style={{ color: 'var(--primary)', fontSize: '1.5rem' }}></i>
                     </div>
                     <h5>{v.title}</h5>
                     <p className="text-muted mb-0" style={{ fontSize: '0.9rem' }}>{v.desc}</p>
@@ -124,7 +121,7 @@ export default function AboutPage() {
         <section style={{ padding: '80px 0' }}>
           <div className="container">
             <div className="text-center mb-5">
-              <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--accent)', letterSpacing: 2 }}>The People</p>
+              <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>The People</p>
               <h2 className="section-title">Meet Our Team</h2>
             </div>
             <div className="row g-4 justify-content-center">
@@ -149,7 +146,7 @@ export default function AboutPage() {
               Let's simplify your compliance and grow your business together.
             </p>
             <Link href="/contact" className="btn btn-accent btn-lg px-5">
-              Get In Touch <i className="bi bi-arrow-right ms-2" />
+              Get In Touch <i className="bi bi-arrow-right ms-2"></i>
             </Link>
           </div>
         </section>

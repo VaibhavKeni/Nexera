@@ -12,16 +12,18 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
   const isHome = router.pathname === '/';
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const transparent = isHome && !scrolled;
+  const transparent = isHome && !scrolled && mounted;
 
   return (
     <nav
@@ -32,14 +34,27 @@ export default function Navbar() {
     >
       <div className="container">
         <Link href="/" className="navbar-brand p-0">
-          <Image
-            src="/Logo with name.png"
-            alt="NexEra Consultants"
-            height={52}
-            width={180}
-            style={{ objectFit: 'contain', filter: transparent ? 'brightness(0) invert(1)' : 'none' }}
-            priority
-          />
+          {mounted ? (
+            <div style={{ filter: transparent ? 'brightness(0) invert(1)' : 'none' }}>
+              <Image
+                src="/Logo with name.png"
+                alt="NexEra Consultants"
+                height={50}
+                width={200}
+                style={{ objectFit: 'contain' }}
+                priority
+              />
+            </div>
+          ) : (
+            <Image
+              src="/Logo with name.png"
+              alt="NexEra Consultants"
+              height={50}
+              width={200}
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          )}
         </Link>
         <button
           className="navbar-toggler border-0"
@@ -47,7 +62,7 @@ export default function Navbar() {
           data-bs-toggle="collapse"
           data-bs-target="#navMenu"
         >
-          <i className={`bi bi-list fs-3`} style={{ color: transparent ? '#fff' : '#1e81cd' }} />
+          <i className={`bi bi-list fs-3`} style={{ color: transparent ? '#fff' : '#1e81cd' }}></i>
         </button>
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto align-items-center gap-1">

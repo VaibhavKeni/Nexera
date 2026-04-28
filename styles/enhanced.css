@@ -1,16 +1,4 @@
-/* Enhanced visual elements */
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(30, 129, 205, 0.15);
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.1);
-}
-
-.service-icon {
-  transition: transform 0.3s ease;
-}
+/* Enhanced visual elements - additional overrides */
 
 /* Image overlays */
 .image-overlay {
@@ -35,7 +23,7 @@
 
 /* Statistics section */
 .stats-section {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
   padding: 80px 0;
   color: white;
 }
@@ -47,16 +35,20 @@
   border-radius: 16px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.stat-number {
+.stat-card .stat-number {
   font-size: 3rem;
   font-weight: 800;
   color: var(--accent);
   display: block;
 }
 
-.stat-label {
+.stat-card .stat-label {
   font-size: 1rem;
   opacity: 0.9;
   margin-top: 8px;

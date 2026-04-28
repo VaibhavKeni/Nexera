@@ -12,7 +12,14 @@ export { features };
 
 export default function About({ preview }: { preview?: boolean }) {
   return (
-    <section className="about-section" id="about">
+    <section 
+      className="about-section" 
+      id="about"
+      style={{
+        background: 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)',
+        position: 'relative'
+      }}
+    >
       <div className="container">
         <div className="row align-items-center g-5">
           <div className="col-lg-5">
@@ -26,13 +33,15 @@ export default function About({ preview }: { preview?: boolean }) {
               }}
             >
               <div className="d-flex align-items-center mb-3">
-                <Image
-                  src="/Logo with name.png"
-                  alt="NexEra Consultants"
-                  height={40}
-                  width={140}
-                  style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-                />
+                <div style={{ filter: 'brightness(0) invert(1)' }}>
+                  <Image
+                    src="/Logo with name.png"
+                    alt="NexEra Consultants"
+                    height={60}
+                    width={240}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
               </div>
               <h3 className="fw-bold mb-3">Why Choose NexEra?</h3>
               <p style={{ opacity: 0.85 }}>
@@ -55,7 +64,7 @@ export default function About({ preview }: { preview?: boolean }) {
             </div>
           </div>
           <div className="col-lg-7">
-            <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--accent)', letterSpacing: 2 }}>
+            <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>
               About Us
             </p>
             <h2>Simplifying Compliance &amp; Empowering Businesses</h2>
@@ -66,7 +75,7 @@ export default function About({ preview }: { preview?: boolean }) {
               {features.map((f) => (
                 <div className="feature-item" key={f.title}>
                   <div className="feature-icon">
-                    <i className={`bi ${f.icon}`} />
+                    <i className={`bi ${f.icon}`}></i>
                   </div>
                   <div>
                     <div className="fw-bold" style={{ color: 'var(--primary)' }}>{f.title}</div>
@@ -78,7 +87,7 @@ export default function About({ preview }: { preview?: boolean }) {
             {preview && (
               <div className="mt-4">
                 <Link href="/about" className="btn btn-primary-custom px-5 py-2">
-                  Learn More About Us <i className="bi bi-arrow-right ms-2" />
+                  Learn More About Us <i className="bi bi-arrow-right ms-2"></i>
                 </Link>
               </div>
             )}

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,10 +8,6 @@ import LogoShowcase from '../components/LogoShowcase';
 import { services } from '../components/Services';
 
 export default function ServicesPage() {
-  useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-
   return (
     <>
       <Head>
@@ -109,7 +104,7 @@ export default function ServicesPage() {
               Get in touch with our experts and we'll guide you through the right solution for your needs.
             </p>
             <Link href="/contact" className="btn btn-accent btn-lg px-5">
-              Contact Us Today <i className="bi bi-arrow-right ms-2" />
+              Contact Us Today <i className="bi bi-arrow-right ms-2"></i>
             </Link>
           </div>
         </section>

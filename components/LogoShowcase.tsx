@@ -13,14 +13,16 @@ export default function LogoShowcase({
     <section className="logo-showcase">
       <div className="container">
         <div className="logo-container">
-          <Image
-            src="/Logo with name.png"
-            alt="NexEra Consultants"
-            height={80}
-            width={280}
-            style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-            priority
-          />
+          <div style={{ filter: 'brightness(0) invert(1)' }}>
+            <Image
+              src="/Logo with name.png"
+              alt="NexEra Consultants"
+              height={100}
+              width={400}
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </div>
           <h3 className="mt-3 mb-2 fw-bold">{title}</h3>
           <p className="mb-0" style={{ opacity: 0.9 }}>{subtitle}</p>
         </div>

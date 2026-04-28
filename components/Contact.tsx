@@ -11,10 +11,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact-section" id="contact">
+    <section 
+      className="contact-section" 
+      id="contact"
+      style={{
+        background: 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)'
+      }}
+    >
       <div className="container">
         <div className="text-center mb-5">
-          <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--accent)', letterSpacing: 2 }}>
+          <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>
             Get In Touch
           </p>
           <h2 className="section-title">Contact Us</h2>
@@ -28,14 +34,14 @@ export default function Contact() {
             <div className="contact-card h-100">
               <h5 className="fw-bold mb-4" style={{ color: 'var(--primary)' }}>Our Information</h5>
               {[
-                { icon: 'bi-geo-alt', label: 'Address', value: 'Your City, State, India' },
-                { icon: 'bi-telephone', label: 'Phone', value: '+91 XXXXX XXXXX' },
+                { icon: 'bi-geo-alt', label: 'Address', value: '106-A,Siddhivinayak chs, Renuka Nagar,Kandivali west, Mumbai-400067, Maharashtra, India' },
+                { icon: 'bi-telephone', label: 'Phone', value: '+91 98331 97647/ +91 90047 035026' },
                 { icon: 'bi-envelope', label: 'Email', value: 'info@nexeraconsultants.com' },
-                { icon: 'bi-clock', label: 'Working Hours', value: 'Mon–Sat: 9:00 AM – 7:00 PM' },
+                { icon: 'bi-clock', label: 'Working Hours', value: 'Mon–Sat: 10:00 AM – 7:00 PM' },
               ].map((item) => (
                 <div className="contact-info-item" key={item.label}>
                   <div className="contact-info-icon">
-                    <i className={`bi ${item.icon}`} />
+                    <i className={`bi ${item.icon}`}></i>
                   </div>
                   <div>
                     <div className="fw-semibold" style={{ fontSize: '0.85rem', color: '#888' }}>{item.label}</div>
@@ -84,7 +90,7 @@ export default function Contact() {
                   </div>
                   <div className="col-12">
                     <button type="submit" className="btn btn-accent px-5 py-2">
-                      Send Message <i className="bi bi-send ms-2" />
+                      Send Message <i className="bi bi-send ms-2"></i>
                     </button>
                   </div>
                 </div>

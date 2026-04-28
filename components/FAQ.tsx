@@ -35,7 +35,12 @@ export default function FAQ() {
   };
 
   return (
-    <section className="about-section">
+    <section 
+      className="about-section"
+      style={{
+        background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)'
+      }}
+    >
       <div className="container">
         <div className="text-center mb-5">
           <p className="text-uppercase fw-bold mb-1 accent-text" style={{ letterSpacing: 2 }}>

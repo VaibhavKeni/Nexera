@@ -65,10 +65,17 @@ export default function Services({ preview }: { preview?: boolean }) {
   const displayed = preview ? services.slice(0, 4) : services;
 
   return (
-    <section className="services-section" id="services">
+    <section 
+      className="services-section" 
+      id="services"
+      style={{
+        background: 'linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)',
+        position: 'relative'
+      }}
+    >
       <div className="container">
         <div className="text-center mb-5">
-          <p className="text-uppercase fw-bold mb-1" style={{ color: '#3cfade', letterSpacing: 2 }}>
+          <p className="text-uppercase fw-bold mb-1" style={{ color: 'var(--primary)', letterSpacing: 2 }}>
             What We Offer
           </p>
           <h2 className="section-title">{preview ? 'Our Key Services' : 'Services We Provide'}</h2>
@@ -80,12 +87,20 @@ export default function Services({ preview }: { preview?: boolean }) {
           {displayed.map((s) => (
             <div className={`col-sm-6 ${preview ? 'col-lg-3' : 'col-lg-3'}`} key={s.title}>
               <Link href={s.link} className="text-decoration-none">
-                <div className="service-card h-100" style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}>
-                  <div className="service-icon" style={{ background: s.color }}>
+                <div className="service-card h-100" style={{ 
+                  cursor: 'pointer', 
+                  transition: 'all 0.3s ease',
+                  border: '2px solid transparent'
+                }}>
+                  <div className="service-icon" style={{ 
+                    background: s.color,
+                    fontSize: '2.5rem',
+                    marginBottom: '16px'
+                  }}>
                     {s.icon}
                   </div>
-                  <h5>{s.title}</h5>
-                  <ul>
+                  <h5 style={{ color: 'var(--primary)', marginBottom: '12px' }}>{s.title}</h5>
+                  <ul style={{ fontSize: '0.9rem' }}>
                     {s.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
@@ -103,7 +118,7 @@ export default function Services({ preview }: { preview?: boolean }) {
         {preview && (
           <div className="text-center mt-5">
             <Link href="/services" className="btn btn-primary-custom px-5 py-2">
-              View All Services <i className="bi bi-arrow-right ms-2" />
+              View All Services <i className="bi bi-arrow-right ms-2"></i>
             </Link>
           </div>
         )}

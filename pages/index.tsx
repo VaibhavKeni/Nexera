@@ -1,20 +1,19 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import ServiceHighlight from '../components/ServiceHighlight';
 import About from '../components/About';
+import WhyChooseUs from '../components/WhyChooseUs';
+import ProcessSection from '../components/ProcessSection';
 import Statistics from '../components/Statistics';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
+import CallToAction from '../components/CallToAction';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
-
   return (
     <>
       <Head>
@@ -26,11 +25,15 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <ServiceHighlight />
         <Services preview />
         <About preview />
+        <WhyChooseUs />
+        <ProcessSection />
         <Statistics />
         <Testimonials />
         <FAQ />
+        <CallToAction />
         <Contact />
       </main>
       <Footer />

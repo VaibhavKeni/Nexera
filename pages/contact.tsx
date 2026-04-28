@@ -1,4 +1,4 @@
-import { useEffect, useState, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -6,10 +6,6 @@ import PageHero from '../components/PageHero';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    require('bootstrap/dist/js/bootstrap.bundle.min.js');
-  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -40,10 +36,10 @@ export default function ContactPage() {
               <div className="col-lg-4">
                 <div className="d-flex flex-column gap-3">
                   {[
-                    { icon: 'bi-geo-alt-fill', label: 'Our Address', value: 'Your City, State, India', color: '#e8f4fd' },
-                    { icon: 'bi-telephone-fill', label: 'Phone Number', value: '+91 XXXXX XXXXX', color: '#eafaf1' },
+                    { icon: 'bi-geo-alt-fill', label: 'Our Address', value: '106-A,Siddhivinayak chs, Renuka Nagar,Kandivali west, Mumbai-400067, Maharashtra, India', color: '#e8f4fd' },
+                    { icon: 'bi-telephone-fill', label: 'Phone Number', value: '+91 98331 97647/ +91 90047 035026', color: '#eafaf1' },
                     { icon: 'bi-envelope-fill', label: 'Email Address', value: 'info@nexeraconsultants.com', color: '#fef9e7' },
-                    { icon: 'bi-clock-fill', label: 'Working Hours', value: 'Mon–Sat: 9:00 AM – 7:00 PM', color: '#fdf2f8' },
+                    { icon: 'bi-clock-fill', label: 'Working Hours', value: 'Mon–Sat: 10:00 AM – 7:00 PM', color: '#fdf2f8' },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -58,7 +54,7 @@ export default function ContactPage() {
                           flexShrink: 0,
                         }}
                       >
-                        <i className={`bi ${item.icon}`} style={{ color: '#1a3c6e', fontSize: '1.2rem' }} />
+                        <i className={`bi ${item.icon}`} style={{ color: '#1a3c6e', fontSize: '1.2rem' }}></i>
                       </div>
                       <div>
                         <div className="fw-semibold" style={{ fontSize: '0.82rem', color: '#888' }}>{item.label}</div>
@@ -87,7 +83,7 @@ export default function ContactPage() {
                             fontSize: '1.1rem', textDecoration: 'none',
                           }}
                         >
-                          <i className={`bi ${s.icon}`} />
+                          <i className={`bi ${s.icon}`}></i>
                         </a>
                       ))}
                     </div>
@@ -137,7 +133,7 @@ export default function ContactPage() {
                       </div>
                       <div className="col-12">
                         <button type="submit" className="btn btn-accent px-5 py-2">
-                          Send Message <i className="bi bi-send ms-2" />
+                          Send Message <i className="bi bi-send ms-2"></i>
                         </button>
                       </div>
                     </div>
@@ -149,7 +145,7 @@ export default function ContactPage() {
             {/* Map placeholder */}
             <div className="mt-4 rounded-3 overflow-hidden" style={{ height: 300, background: '#e8ecf0', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #dde2e8' }}>
               <div className="text-center text-muted">
-                <i className="bi bi-map" style={{ fontSize: '3rem', color: '#1a3c6e', opacity: 0.4 }} />
+                <i className="bi bi-map" style={{ fontSize: '3rem', color: '#1a3c6e', opacity: 0.4 }}></i>
                 <p className="mt-2 mb-0">Google Map will be embedded here</p>
                 <small>Replace this with your Google Maps embed iframe</small>
               </div>

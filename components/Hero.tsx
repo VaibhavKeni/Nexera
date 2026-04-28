@@ -2,7 +2,16 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="hero-section" id="home">
+    <section 
+      className="hero-section" 
+      id="home"
+      style={{
+        background: 'linear-gradient(135deg, rgba(6, 61, 117, 0.95) 0%, rgba(30, 129, 205, 0.9) 100%), url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="container">
         <div className="row align-items-center g-5">
           <div className="col-lg-7">
@@ -15,7 +24,7 @@ export default function Hero() {
             </p>
             <div className="d-flex flex-wrap gap-3">
               <a href="#services" className="btn btn-accent btn-lg">
-                Explore Services <i className="bi bi-arrow-right ms-1" />
+                Explore Services <i className="bi bi-arrow-right ms-1"></i>
               </a>
               <a href="#contact" className="btn btn-outline-light btn-lg">
                 Contact Us
@@ -39,26 +48,25 @@ export default function Hero() {
             <div className="logo-showcase-hero">
               <div
                 style={{
-                  width: 380,
-                  height: 380,
+                  width: 450,
+                  height: 450,
                   borderRadius: '50%',
                   background: 'rgba(60, 250, 222, 0.1)',
                   border: '2px solid rgba(60, 250, 222, 0.3)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  flexDirection: 'column',
-                  gap: '20px',
                 }}
               >
-                <Image
-                  src="/Logo with name.png"
-                  alt="NexEra Consultants"
-                  height={80}
-                  width={280}
-                  style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
-                />
-                <div style={{ fontSize: '4rem' }}>💼</div>
+                <div style={{ filter: 'brightness(0) invert(1)' }}>
+                  <Image
+                    src="/Logo with name.png"
+                    alt="NexEra Consultants"
+                    height={180}
+                    width={600}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
